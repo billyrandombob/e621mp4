@@ -17,7 +17,7 @@ class FileValidator
       validate_container_format(video)
       validate_duration(video)
       validate_colorspace(video)
-      validate_sar(video)
+      # validate_sar(video)
     end
     validate_resolution(max_width, max_height)
   end
@@ -71,10 +71,10 @@ class FileValidator
       record.errors.add(:base, "video isn't valid")
       return
     end
-    valid_video_codec = %w[vp8 vp9 av1].include?(video.video_codec)
-    valid_container = video.container == "matroska,webm"
+    valid_video_codec = %w[vp8 vp9 av1 hevc avc h264 h265 avc1].include?(video.video_codec)
+    valid_container = video.container == "matroska,webm" || video.container == "mov,mp4,m4a,3gp,3g2,mj2"
     unless valid_video_codec && valid_container
-      record.errors.add(:base, "video container/codec isn't valid for webm")
+      record.errors.add(:base, "Codec: #{valid_video_codec}, Container: #{valid_container} video container/codec #{video.container},#{video.video_codec} isn't valid for webm or mp4")
     end
   end
 

@@ -61,6 +61,32 @@ class UploadServiceTest < ActiveSupport::TestCase
 
     context ".generate_resizes" do
       context "for a video" do
+        context "for an mp4" do
+          setup do
+            @file = File.open("test/files/test-300x300.mp4", "rb")
+            @upload = mock()
+            @upload.stubs(:is_video?).returns(true)
+          end
+
+          should "generate a video" do
+            preview, crop, sample = subject.generate_resizes(@file, @upload)
+            assert_operator(File.size(preview.path), :>, 0)
+            assert_operator(File.size(crop.path), :>, 0)
+            preview_image = Vips::Image.new_from_file(preview.path)
+            crop_image = Vips::Image.new_from_file(crop.path)
+            assert_equal(150, ImageSpec.new(preview.path).width)
+            assert_equal(150, ImageSpec.new(preview.path).height)
+            assert_equal(150, ImageSpec.new(crop.path).width)
+            assert_equal(150, ImageSpec.new(crop.path).height)
+            preview.close
+            preview.unlink
+            crop.close
+            crop.unlink
+          end
+        end
+
+
+
         context "for a webm" do
           setup do
             @file = file_fixture("test-512x512.webm").open

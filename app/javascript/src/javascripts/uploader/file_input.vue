@@ -7,7 +7,7 @@
       </div>
       <label>File:
         <input type="file" ref="post_file" @change="updatePreviewFile"
-          accept="image/png,image/apng,image/jpeg,image/gif,video/webm,.png,.apng,.jpg,.jpeg,.gif,.webm"
+          accept="image/png,image/apng,image/jpeg,image/gif,video/webm,video/mp4,.png,.apng,.jpg,.jpeg,.gif,.webm,.video/mp4"
           :disabled="disableFileUpload"/>
       </label>
       <button @click.prevent="clearFileUpload" v-show="disableURLUpload">Clear</button>
@@ -151,7 +151,7 @@ export default {
       const objectUrl = URL.createObjectURL(file);
       this.disableURLUpload = true;
       this.uploadValueChanged(file);
-      this.previewChanged(objectUrl, file.type === "video/webm");
+      this.previewChanged(objectUrl, file.type === "video/webm" || file.type === "video/mp4");
     },
     uploadValueChanged(value) {
       this.$emit("uploadValueChanged", value);
