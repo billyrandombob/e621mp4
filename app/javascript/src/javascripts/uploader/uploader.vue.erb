@@ -34,16 +34,16 @@
                     </div>
                     <div class="col2">
                         <div>
-            <textarea class="tag-textarea" v-model="tagEntries.character" id="post_characters" rows="2"
+            <textarea class="tag-textarea" v-model="tagEntries.name" id="post_namess" rows="2"
                       placeholder="Ex: artist_name, unknown_artist, anonymous_artist etc." data-autocomplete="tag-edit"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="flex-grid border-bottom">
                     <div class="col">
-                        <label class="section-label" for="post_sex_tags">Characters</label>
+                        <label class="section-label" for="post_sex_tags">Character</label>
                         <div>
-                            Select (and write in) all that apply. Character sex is based only on what is visible in the
+                            Select (and write in) all that apply. Sex is based only on what is visible in the
                             image.
                         </div>
                         <div><a href="/wiki_pages/tag_what_you_see">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="flex-grid border-bottom">
                     <div class="col">
-                        <label class="section-label">Body Types and Species</label>
+                        <label class="section-label">Body Types and Demographics</label>
                         <div>One listed body type per visible character, listed options are mutually exclusive.</div>
                     </div>
                     <div class="col2">
@@ -162,8 +162,8 @@
                         <a href="#" @click.prevent="findRelated()">Tags</a> |
                         <a href="#" @click.prevent="findRelated(1)">Artists</a> |
                         <a href="#" @click.prevent="findRelated(3)">Copyrights</a> |
-                        <a href="#" @click.prevent="findRelated(4)">Characters</a> |
-                        <a href="#" @click.prevent="findRelated(5)">Species</a> |
+                        <a href="#" @click.prevent="findRelated(4)">Names</a> |
+                        <a href="#" @click.prevent="findRelated(5)">Demographics</a> |
                         <a href="#" @click.prevent="findRelated(7)">Metatags</a> |
                         <a href="#" @click.prevent="previewFinalTags">Preview Final Tags</a>
                     </div>
@@ -343,7 +343,7 @@
           all: allChecks
         },
         tagEntries: {
-          character: '',
+          name: '',
           sex: '',
           bodyType: '',
           theme: '',
@@ -573,7 +573,7 @@
           return self.checkboxes.selected[x] === true;
         });
         return checked.concat([this.tagEntries.other, this.tagEntries.sex, this.tagEntries.bodyType,
-          this.tagEntries.theme, this.tagEntries.character]).join(' ').replace(',', ' ').trim().replace(/ +/g, ' ');
+          this.tagEntries.theme, this.tagEntries.name]).join(' ').replace(',', ' ').trim().replace(/ +/g, ' ');
       },
       tagsArray() {
         return this.tags.toLowerCase().split(' ');

@@ -7,8 +7,8 @@ class TagSetPresenterTest < ActiveSupport::TestCase
     setup do
       CurrentUser.user = create(:mod_user)
       create(:tag, name: "bkub", category: Tag.categories.artist)
-      create(:tag, name: "chen", category: Tag.categories.character)
-      create(:tag, name: "cirno", category: Tag.categories.character)
+      create(:tag, name: "chen", category: Tag.categories.name)
+      create(:tag, name: "cirno", category: Tag.categories.name)
       create(:tag, name: "solo", category: Tag.categories.general)
       create(:tag, name: "touhou", category: Tag.categories.copyright)
     end

@@ -42,7 +42,7 @@ class TagTest < ActiveSupport::TestCase
       assert_equal(0, Tag.categories.general)
       assert_equal(1, Tag.categories.artist)
       assert_equal(3, Tag.categories.copyright)
-      assert_equal(4, Tag.categories.character)
+      assert_equal(4, Tag.categories.name)
       assert_equal(7, Tag.categories.meta)
     end
 
@@ -54,7 +54,7 @@ class TagTest < ActiveSupport::TestCase
       assert_match(regexp, "copyright")
       assert_match(regexp, "copy")
       assert_match(regexp, "co")
-      assert_match(regexp, "character")
+      assert_match(regexp, "name")
       assert_match(regexp, "char")
       assert_match(regexp, "ch")
       assert_match(regexp, "meta")
@@ -134,14 +134,14 @@ class TagTest < ActiveSupport::TestCase
     should "update post tag counts when the category is changed" do
       post = create(:post, tag_string: "test")
       assert_equal(1, post.tag_count_general)
-      assert_equal(0, post.tag_count_character)
+      assert_equal(0, post.tag_count_name)
 
       tag = Tag.find_by_normalized_name('test')
       with_inline_jobs { tag.update_attribute(:category, 4) }
       assert_equal tag.errors.full_messages, []
       post.reload
       assert_equal(0, post.tag_count_general)
-      assert_equal(1, post.tag_count_character)
+      assert_equal(1, post.tag_count_name)
     end
 
     should "be created when one doesn't exist" do

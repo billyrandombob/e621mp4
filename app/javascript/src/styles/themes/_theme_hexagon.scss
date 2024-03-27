@@ -86,11 +86,50 @@ body {
   --color-tag-copyright:          #d0d;
   --color-tag-copyright-alt:      #ff5eff;
 
-  --color-tag-character:          #0a0;
-  --color-tag-character-alt:      #2bff2b;
+  --color-tag-name:          #0a0;
+  --color-tag-name-alt:      #2bff2b;
 
-  --color-tag-species:            #ed5d1f;
-  --color-tag-species-alt:        #f6b295;
+  --color-tag-demographics:            #f2ff3d;
+  --color-tag-demographics-alt:        #fffabb;
+
+  --color-tag-unique:            #e99f17;
+  --color-tag-unique-alt:        #ffd7a2;
+
+  --color-tag-form:            #00ffff;
+  --color-tag-form-alt:        #daffff;
+
+  --color-tag-position:            #9dff00;
+  --color-tag-position-alt:        #dbffbe;
+
+  --color-tag-action:            #9358ff;
+  --color-tag-action-alt:        #ffffff;
+
+  --color-tag-explicit:            #ff3f89;
+  --color-tag-explicit-alt:        #ffc3fa;
+
+  --color-tag-hair:            #ff006a;
+  --color-tag-hair-alt:        #ffb5da;
+
+  --color-tag-clothes:            #00ccff;
+  --color-tag-clothes-alt:        #ffffff;
+  
+  --color-tag-body:            #ed5d1f;
+  --color-tag-body-alt:        #f6b295;
+
+  --color-tag-genre:            #03ff64;
+  --color-tag-genre-alt:        #b5ffa7;
+
+  --color-tag-request:            #9c9c9c;
+  --color-tag-request-alt:        #ffffff;
+
+  --color-tag-organization:            #ff6b6b;
+  --color-tag-organization-alt:        #ff1818;
+
+  --color-tag-category:            #ae35ff;
+  --color-tag-category-alt:        #b696ff;
+
+  --color-tag-location:            #ff3223;
+  --color-tag-location-alt:        #f6b295;
 
   --color-tag-invalid:            #ff3d3d;
   --color-tag-invalid-alt:        #{lighten(#ff3d3d, 25%)};

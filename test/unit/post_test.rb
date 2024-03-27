@@ -697,7 +697,7 @@ class PostTest < ActiveSupport::TestCase
           end
 
           should "change the type" do
-            assert(Tag.where(name: "hoge", category: 4).exists?, "expected 'moge' tag to be created as a character")
+            assert(Tag.where(name: "hoge", category: 4).exists?, "expected 'moge' tag to be created as a name")
           end
         end
 
@@ -1136,7 +1136,7 @@ class PostTest < ActiveSupport::TestCase
           assert_equal(1, new_post.tag_count_artist)
           assert_equal(1, new_post.tag_count_copyright)
           assert_equal(1, new_post.tag_count_general)
-          assert_equal(0, new_post.tag_count_character)
+          assert_equal(0, new_post.tag_count_name)
           assert_equal(3, new_post.tag_count)
 
           new_post.tag_string = "babs"
@@ -1144,7 +1144,7 @@ class PostTest < ActiveSupport::TestCase
           assert_equal(0, new_post.tag_count_artist)
           assert_equal(0, new_post.tag_count_copyright)
           assert_equal(1, new_post.tag_count_general)
-          assert_equal(0, new_post.tag_count_character)
+          assert_equal(0, new_post.tag_count_name)
           assert_equal(1, new_post.tag_count)
         end
 
