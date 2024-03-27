@@ -9,9 +9,9 @@ class TagCategory
     "copyright" => 3,
     "copy" => 3,
     "co" => 3,
-    "character" => 4,
-    "char" => 4,
-    "ch" => 4,
+    "name" => 4,
+    "nam" => 4,
+    "nm" => 4,
     "oc" => 4,
     "species" => 5,
     "spec" => 5,
@@ -26,7 +26,7 @@ class TagCategory
     "General" => 0,
     "Artist" => 1,
     "Copyright" => 3,
-    "Character" => 4,
+    "Name" => 4,
     "Species" => 5,
     "Invalid" => 6,
     "Meta" => 7,
@@ -37,7 +37,7 @@ class TagCategory
     0 => "general",
     1 => "artist",
     3 => "copyright",
-    4 => "character",
+    4 => "name",
     5 => "species",
     6 => "invalid",
     7 => "meta",
@@ -48,7 +48,7 @@ class TagCategory
     "gen" => "general",
     "art" => "artist",
     "copy" => "copyright",
-    "char" => "character",
+    "nam" => "name",
     "spec" => "species",
     "inv" => "invalid",
     "meta" => "meta",
@@ -59,7 +59,7 @@ class TagCategory
     "general" => "General",
     "artist" => "Artists",
     "copyright" => "Copyrights",
-    "character" => "Characters",
+    "name" => "Names",
     "species" => "Species",
     "invalid" => "Invalid",
     "meta" => "Meta",
@@ -70,7 +70,7 @@ class TagCategory
     "general" => false,
     "artist" => false,
     "copyright" => false,
-    "character" => false,
+    "name" => false,
     "species" => false,
     "invalid" => true,
     "meta" => true,
@@ -90,7 +90,7 @@ class TagCategory
       "regexmap" => //,
       "formatstr" => "(%s)",
     },
-    "character" => {
+    "name" => {
       "slice" => 5,
       "exclusion" => [],
       "regexmap" => /^(.+?)(?:_\(.+\))?$/,
@@ -98,13 +98,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general species character copyright artist invalid lore meta].freeze
+  CATEGORIES = %w[general species name copyright artist invalid lore meta].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
-  HUMANIZED_LIST = %w[character copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright character species general meta lore].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright character species meta general lore].freeze
+  HUMANIZED_LIST = %w[name copyright artist].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name species general meta lore].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name species meta general lore].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end

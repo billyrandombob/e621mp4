@@ -1588,7 +1588,7 @@ CREATE TABLE public.posts (
     tag_count integer DEFAULT 0 NOT NULL,
     tag_count_general integer DEFAULT 0 NOT NULL,
     tag_count_artist integer DEFAULT 0 NOT NULL,
-    tag_count_character integer DEFAULT 0 NOT NULL,
+    tag_count_name integer DEFAULT 0 NOT NULL,
     tag_count_copyright integer DEFAULT 0 NOT NULL,
     file_ext character varying NOT NULL,
     file_size integer NOT NULL,

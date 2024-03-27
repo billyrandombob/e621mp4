@@ -28,7 +28,7 @@ module PostIndex
 
           tag_count_general: { type: "integer" },
           tag_count_artist: { type: "integer" },
-          tag_count_character: { type: "integer" },
+          tag_count_name: { type: "integer" },
           tag_count_copyright: { type: "integer" },
           tag_count_meta: { type: "integer" },
           tag_count_species: { type: "integer" },
@@ -231,7 +231,7 @@ module PostIndex
 
       tag_count_general:   tag_count_general,
       tag_count_artist:    tag_count_artist,
-      tag_count_character: tag_count_character,
+      tag_count_name:      tag_count_name,
       tag_count_copyright: tag_count_copyright,
       tag_count_meta:      tag_count_meta,
       tag_count_species:   tag_count_species,
