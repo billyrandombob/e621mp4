@@ -17,6 +17,7 @@ class PostsDecorator < ApplicationDecorator
     klass << "post-status-has-children" if post.has_visible_children?
     klass << "post-rating-safe" if post.rating == 's'
     klass << "post-rating-questionable" if post.rating == 'q'
+    klass << "post-rating-suggestive" if post.rating == 'u'
     klass << "post-rating-explicit" if post.rating == 'e'
     klass << "post-no-blacklist" if options[:no_blacklist]
     klass

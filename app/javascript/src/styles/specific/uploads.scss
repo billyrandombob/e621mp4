@@ -26,6 +26,9 @@ div#c-uploads {
     .rating-q.active {
       background-color: themed("color-rating-questionable");
     }
+    .rating-u.active {
+      background-color: themed("color-rating-suggestive");
+    }
     .rating-s.active {
       background-color: themed("color-rating-safe");
     }

@@ -41,6 +41,10 @@ article.post-preview {
     color: $post-rating-questionable-color;
   }
 
+  &.post-rating-suggestive .post-score-rating {
+    color: $post-rating-suggestive-color;
+  }
+
   img {
     box-sizing: border-box;
     margin: auto;
@@ -366,6 +370,10 @@ div#c-posts {
 
       #post_rating_q:checked + label {
         background-color: themed("color-rating-questionable");
+      }
+
+      #post_rating_u:checked + label {
+        background-color: themed("color-rating-suggestive");
       }
 
       #post_rating_s:checked + label {

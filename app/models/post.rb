@@ -19,7 +19,7 @@ class Post < ApplicationRecord
   before_validation :blank_out_nonexistent_parents
   before_validation :remove_parent_loops
   validates :md5, uniqueness: { :on => :create, message: ->(obj, data) {"duplicate: #{Post.find_by_md5(obj.md5).id}"} }
-  validates :rating, inclusion: { in: %w(s q e), message: "rating must be s, q, or e" }
+  validates :rating, inclusion: { in: %w(s q u e), message: "rating must be s, q, u, or e" }
   validates :bg_color, format: { with: /\A[A-Fa-f0-9]{6}\z/ }, allow_nil: true
   validates :description, length: { maximum: Danbooru.config.post_descr_max_size }, if: :description_changed?
   validate :added_tags_are_valid, if: :should_process_tags?
@@ -398,6 +398,9 @@ class Post < ApplicationRecord
       case rating
       when "q"
         "Questionable"
+
+      when "u"
+        "Suggestive"
 
       when "e"
         "Explicit"
@@ -811,7 +814,7 @@ class Post < ApplicationRecord
             remove_parent_loops
           end
 
-        when /^rating:([qse])/i
+        when /^rating:([qsue])/i
           self.rating = $1
 
         when /^(-?)locked:notes?$/i
