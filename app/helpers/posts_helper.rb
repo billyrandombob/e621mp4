@@ -167,6 +167,7 @@ module PostsHelper
     [
       ["Safe", "s"],
       ["Questionable", "q"],
+      ["Suggestive", "u"],
       ["Explicit", "e"]
     ]
   end

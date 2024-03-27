@@ -137,6 +137,7 @@ $post-version-content-background: inherit;
 // Posts
 $post-rating-explicit-color: $red-color;
 $post-rating-questionable-color: hsl(50, 100%, 70%);
+$post-rating-suggestive-color: hsl(288, 100%, 70%);
 $post-rating-safe-color: $green-color;
 $post-preview-highlight-background: rgba(0,0,0,0.1);
 $post-tag-low-count-color: red;
@@ -157,6 +158,7 @@ $post-mode-add-to-set: #A51;
 $post-mode-remove-from-set: darken($post-mode-add-to-set, 10%);
 $post-mode-rating-s: darken($post-rating-safe-color, 25%);
 $post-mode-rating-q: darken($post-rating-questionable-color, 50%);
+$post-mode-rating-u: darken($post-rating-suggestive-color, 50%);
 $post-mode-rating-e: darken($post-rating-explicit-color, 25%);
 $post-mode-remove-parent: #38F;
 $post-mode-undelete: #818;

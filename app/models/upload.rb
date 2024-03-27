@@ -13,7 +13,7 @@ class Upload < ApplicationRecord
   before_validation :fixup_source, on: :create
   validate :uploader_is_not_limited, on: :create
   validate :direct_url_is_whitelisted, on: :create
-  validates :rating, inclusion: { in: %w(q e s) }, allow_nil: false
+  validates :rating, inclusion: { in: %w(q e u s) }, allow_nil: false
   validate :md5_is_unique, on: :file
   validate on: :file do |upload|
     FileValidator.new(upload, file.path).validate
@@ -177,11 +177,12 @@ class Upload < ApplicationRecord
       return
     end
 
-    if (destroyed_post = DestroyedPost.find_by(md5: md5))
-      errors.add(:base, "An unexpected errror occured")
-      DummyTicket.new(uploader, destroyed_post.post_id).notify
-      return
-    end
+    # TODO: Remove re-upload prevention
+    # if (destroyed_post = DestroyedPost.find_by(md5: md5))
+    #   errors.add(:base, "An unexpected errror occured")
+    #   DummyTicket.new(uploader, destroyed_post.post_id).notify
+    #   return
+    # end
 
     replacements = PostReplacement.pending.where(md5: md5)
     replacements = replacements.where.not(id: replacement_id) if replacement_id
