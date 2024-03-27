@@ -21,7 +21,9 @@ class TagCategory
     "lore" => 8,
     "lor" => 8,
     "category" => 9,
-    "cat" => 9
+    "cat" => 9,
+    "organization" => 10,
+    "org" => 10,
   }.freeze
 
   CANONICAL_MAPPING = {
@@ -34,6 +36,7 @@ class TagCategory
     "Meta" => 7,
     "Lore" => 8,
     "Category" => 9,
+    "Organization" => 10,
   }.freeze
 
   REVERSE_MAPPING = {
@@ -46,6 +49,7 @@ class TagCategory
     7 => "meta",
     8 => "lore",
     9 => "category",
+    10 => "organization"
   }.freeze
 
   SHORT_NAME_MAPPING = {
@@ -58,6 +62,7 @@ class TagCategory
     "meta" => "meta",
     "lor" => "lore",
     "cat" => "category",
+    "org" => "organization",
   }.freeze
 
   HEADER_MAPPING = {
@@ -69,7 +74,8 @@ class TagCategory
     "invalid" => "Invalid",
     "meta" => "Meta",
     "lore" => "Lore",
-    "category" => "Categories"
+    "category" => "Categories",
+    "organization" => "Organizations"
   }.freeze
 
   ADMIN_ONLY_MAPPING = {
@@ -82,6 +88,7 @@ class TagCategory
     "invalid" => true,
     "meta" => true,
     "lore" => true,
+    "organization" => false,
   }.freeze
 
   HUMANIZED_MAPPING = {
@@ -105,13 +112,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end
