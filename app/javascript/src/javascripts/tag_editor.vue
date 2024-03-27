@@ -21,6 +21,9 @@
             <a href="#" @click.prevent="findRelated(14)">Body</a> |
             <a href="#" @click.prevent="findRelated(15)">Hair</a> |
             <a href="#" @click.prevent="findRelated(16)">Clothes</a> |
+            <a href="#" @click.prevent="findRelated(17)">Positions</a> |
+            <a href="#" @click.prevent="findRelated(18)">Actions</a> |
+            <a href="#" @click.prevent="findRelated(19)">Explicit</a> |
             <a href="#" @click.prevent="findRelated(7)">Metatags</a> |
             <a href="#" @click.prevent="previewFinalTags">Preview Final Tags</a>
         </div>
