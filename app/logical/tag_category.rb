@@ -24,6 +24,8 @@ class TagCategory
     "cat" => 9,
     "organization" => 10,
     "org" => 10,
+    "location" => 11,
+    "loc" => 11,
   }.freeze
 
   CANONICAL_MAPPING = {
@@ -37,6 +39,7 @@ class TagCategory
     "Lore" => 8,
     "Category" => 9,
     "Organization" => 10,
+    "Location" => 11,
   }.freeze
 
   REVERSE_MAPPING = {
@@ -49,7 +52,8 @@ class TagCategory
     7 => "meta",
     8 => "lore",
     9 => "category",
-    10 => "organization"
+    10 => "organization",
+    11 => "location",
   }.freeze
 
   SHORT_NAME_MAPPING = {
@@ -63,6 +67,7 @@ class TagCategory
     "lor" => "lore",
     "cat" => "category",
     "org" => "organization",
+    "loc" => "location",
   }.freeze
 
   HEADER_MAPPING = {
@@ -75,7 +80,8 @@ class TagCategory
     "meta" => "Meta",
     "lore" => "Lore",
     "category" => "Categories",
-    "organization" => "Organizations"
+    "organization" => "Organizations",
+    "location" => "Locations",
   }.freeze
 
   ADMIN_ONLY_MAPPING = {
@@ -89,6 +95,7 @@ class TagCategory
     "meta" => true,
     "lore" => true,
     "organization" => false,
+    "location" => false,
   }.freeze
 
   HUMANIZED_MAPPING = {
@@ -112,13 +119,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end
