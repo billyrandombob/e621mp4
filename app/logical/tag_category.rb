@@ -33,6 +33,7 @@ class TagCategory
     "body" => 14,
     "bod" => 14,
     "har" => 15,
+    "clothes" => 16,
     "clo" => 16,
     "position" => 17,
     "pos" => 17,
