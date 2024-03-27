@@ -193,8 +193,8 @@ class TagCategory
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location request genre body hair clothes position action explicit unique form].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location request genre body hair clothes position action explicit unique form].freeze
+  SPLIT_HEADER_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position action explicit unique lore location general request meta invalid].freeze
+  CATEGORIZED_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position action explicit unique lore location general request meta invalid].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end
