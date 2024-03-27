@@ -17,6 +17,10 @@
             <a href="#" @click.prevent="findRelated(10)">Organizations</a> |
             <a href="#" @click.prevent="findRelated(11)">Locations</a> |
             <a href="#" @click.prevent="findRelated(12)">Requests</a> |
+            <a href="#" @click.prevent="findRelated(13)">Genres</a> |
+            <a href="#" @click.prevent="findRelated(14)">Body</a> |
+            <a href="#" @click.prevent="findRelated(15)">Hair</a> |
+            <a href="#" @click.prevent="findRelated(16)">Clothes</a> |
             <a href="#" @click.prevent="findRelated(7)">Metatags</a> |
             <a href="#" @click.prevent="previewFinalTags">Preview Final Tags</a>
         </div>

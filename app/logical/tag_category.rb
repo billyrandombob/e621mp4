@@ -28,6 +28,12 @@ class TagCategory
     "loc" => 11,
     "request" => 12,
     "req" => 12,
+    "genre" => 13,
+    "gnr" => 13,
+    "body" => 14,
+    "bod" => 14,
+    "har" => 15,
+    "clo" => 16,
   }.freeze
 
   CANONICAL_MAPPING = {
@@ -43,6 +49,10 @@ class TagCategory
     "Organization" => 10,
     "Location" => 11,
     "Request" => 12,
+    "Genre" => 13,
+    "Body" => 14,
+    "Hair" => 14,
+    "Clothes" => 16,
   }.freeze
 
   REVERSE_MAPPING = {
@@ -58,6 +68,10 @@ class TagCategory
     10 => "organization",
     11 => "location",
     12 => "request",
+    13 => "genre",
+    14 => "body",
+    15 => "hair",
+    16 => "clothes",
   }.freeze
 
   SHORT_NAME_MAPPING = {
@@ -73,6 +87,10 @@ class TagCategory
     "org" => "organization",
     "loc" => "location",
     "req" => "request",
+    "gnr" => "genre",
+    "bod" => "body",
+    "har" => "hair",
+    "clo" => "clothes",
   }.freeze
 
   HEADER_MAPPING = {
@@ -88,6 +106,10 @@ class TagCategory
     "organization" => "Organizations",
     "location" => "Locations",
     "request" => "Requests",
+    "genre" => "Genres",
+    "body" => "Body",
+    "hair" => "Hair",
+    "clothes" => "Clothes",
   }.freeze
 
   ADMIN_ONLY_MAPPING = {
@@ -103,6 +125,10 @@ class TagCategory
     "organization" => false,
     "location" => false,
     "request" => false,
+    "genre" => false,
+    "body" => false,
+    "hair" => false,
+    "clothes" => false,
   }.freeze
 
   HUMANIZED_MAPPING = {
@@ -126,13 +152,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location request].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location request genre body hair clothes].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location request].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location request].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location request genre body hair clothes].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location request genre body hair clothes].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end
