@@ -26,6 +26,8 @@ class TagCategory
     "org" => 10,
     "location" => 11,
     "loc" => 11,
+    "request" => 12,
+    "req" => 12,
   }.freeze
 
   CANONICAL_MAPPING = {
@@ -40,6 +42,7 @@ class TagCategory
     "Category" => 9,
     "Organization" => 10,
     "Location" => 11,
+    "Request" => 12,
   }.freeze
 
   REVERSE_MAPPING = {
@@ -54,6 +57,7 @@ class TagCategory
     9 => "category",
     10 => "organization",
     11 => "location",
+    12 => "request",
   }.freeze
 
   SHORT_NAME_MAPPING = {
@@ -68,6 +72,7 @@ class TagCategory
     "cat" => "category",
     "org" => "organization",
     "loc" => "location",
+    "req" => "request",
   }.freeze
 
   HEADER_MAPPING = {
@@ -82,6 +87,7 @@ class TagCategory
     "category" => "Categories",
     "organization" => "Organizations",
     "location" => "Locations",
+    "request" => "Requests",
   }.freeze
 
   ADMIN_ONLY_MAPPING = {
@@ -96,6 +102,7 @@ class TagCategory
     "lore" => true,
     "organization" => false,
     "location" => false,
+    "request" => false,
   }.freeze
 
   HUMANIZED_MAPPING = {
@@ -119,13 +126,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location request].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore category organization location request].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore category organization location request].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end

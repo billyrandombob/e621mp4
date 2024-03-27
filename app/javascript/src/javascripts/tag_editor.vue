@@ -16,6 +16,7 @@
             <a href="#" @click.prevent="findRelated(5)">Demographics</a> |
             <a href="#" @click.prevent="findRelated(10)">Organizations</a> |
             <a href="#" @click.prevent="findRelated(11)">Locations</a> |
+            <a href="#" @click.prevent="findRelated(12)">Requests</a> |
             <a href="#" @click.prevent="findRelated(7)">Metatags</a> |
             <a href="#" @click.prevent="previewFinalTags">Preview Final Tags</a>
         </div>
