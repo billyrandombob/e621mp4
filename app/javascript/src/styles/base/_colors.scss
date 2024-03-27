@@ -175,10 +175,23 @@ $tag-categories: (
   "1": "artist",
   "3": "copyright",
   "4": "name",
-  "5": "category",
+  "5": "demographics",
   "6": "invalid",
   "7": "meta",
-  "8": "lore"
+  "8": "lore",
+  "9": "category",
+  "10": "organization",
+  "11": "location",
+  "12": "request",
+  "13": "genre",
+  "14": "body",
+  "15": "hair",
+  "16": "clothes",
+  "17": "position",
+  "18": "action",
+  "19": "explicit",
+  "20": "unique",
+  "21": "form"
 );
 
 $tag-categories-short: (
@@ -186,8 +199,21 @@ $tag-categories-short: (
   "art": "artist",
   "copy": "copyright",
   "nam": "name",
-  "cat": "category",
+  "dem": "demographics",
   "inv": "invalid",
   "meta": "meta",
-  "lor": "lore"
+  "lor": "lore",
+  "cat": "category",
+  "org": "organization",
+  "loc": "location",
+  "req": "request",
+  "gnr": "genre",
+  "bod": "body",
+  "har": "hair",
+  "clo": "clothes",
+  "pos": "position",
+  "act": "action",
+  "exp": "explicit",
+  "unq": "unique",
+  "frm": "form"
 )
