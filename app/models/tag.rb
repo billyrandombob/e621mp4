@@ -141,12 +141,13 @@ class Tag < ApplicationRecord
         errors.add(:category,  "can only used by admins")
         return false
       end
-      if cat == "lore"
-        unless name =~ /\A.*_\(lore\)\z/
-          errors.add(:category, "can only be applied to tags that end with '_(lore)'")
-          return false
-        end
-      end
+      # TODO: Remove lore requirement
+      # if cat == "lore"
+      #   unless name =~ /\A.*_\(lore\)\z/
+      #     errors.add(:category, "can only be applied to tags that end with '_(lore)'")
+      #     return false
+      #   end
+      # end
     end
 
     def update_category
@@ -390,11 +391,12 @@ class Tag < ApplicationRecord
   end
 
   def user_can_create_tag?
-    if name =~ /\A.*_\(lore\)\z/ && !CurrentUser.user.is_admin?
-      errors.add(:base, "Can not create lore tags unless admin")
-      errors.add(:name, "is invalid")
-      return false
-    end
+    # TODO: Remove lore requirement
+    # if name =~ /\A.*_\(lore\)\z/ && !CurrentUser.user.is_admin?
+    #   errors.add(:base, "Can not create lore tags unless admin")
+    #   errors.add(:name, "is invalid")
+    #   return false
+    # end
     true
   end
 
