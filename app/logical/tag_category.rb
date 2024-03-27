@@ -13,8 +13,8 @@ class TagCategory
     "nam" => 4,
     "nm" => 4,
     "oc" => 4,
-    "species" => 5,
-    "spec" => 5,
+    "demographics" => 5,
+    "demo" => 5,
     "invalid" => 6,
     "inv" => 6,
     "meta" => 7,
@@ -27,7 +27,7 @@ class TagCategory
     "Artist" => 1,
     "Copyright" => 3,
     "Name" => 4,
-    "Species" => 5,
+    "Demographics" => 5,
     "Invalid" => 6,
     "Meta" => 7,
     "Lore" => 8,
@@ -38,7 +38,7 @@ class TagCategory
     1 => "artist",
     3 => "copyright",
     4 => "name",
-    5 => "species",
+    5 => "demographics",
     6 => "invalid",
     7 => "meta",
     8 => "lore",
@@ -49,7 +49,7 @@ class TagCategory
     "art" => "artist",
     "copy" => "copyright",
     "nam" => "name",
-    "spec" => "species",
+    "demo" => "demographics",
     "inv" => "invalid",
     "meta" => "meta",
     "lor" => "lore",
@@ -60,7 +60,7 @@ class TagCategory
     "artist" => "Artists",
     "copyright" => "Copyrights",
     "name" => "Names",
-    "species" => "Species",
+    "demographics" => "Demographics",
     "invalid" => "Invalid",
     "meta" => "Meta",
     "lore" => "Lore",
@@ -71,7 +71,7 @@ class TagCategory
     "artist" => false,
     "copyright" => false,
     "name" => false,
-    "species" => false,
+    "demographics" => false,
     "invalid" => true,
     "meta" => true,
     "lore" => true,
@@ -98,13 +98,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general species name copyright artist invalid lore meta].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[invalid artist copyright name species general meta lore].freeze
-  CATEGORIZED_LIST = %w[invalid artist copyright name species meta general lore].freeze
+  SPLIT_HEADER_LIST = %w[invalid artist copyright name demographics general meta lore].freeze
+  CATEGORIZED_LIST = %w[invalid artist copyright name demographics meta general lore].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end
