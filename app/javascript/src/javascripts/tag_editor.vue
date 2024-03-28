@@ -26,6 +26,7 @@
             <a href="#" @click.prevent="findRelated(19)">Explicit</a> |
             <a href="#" @click.prevent="findRelated(20)">Unique</a> |
             <a href="#" @click.prevent="findRelated(21)">Forms</a> |
+            <a href="#" @click.prevent="findRelated(22)">View</a> |
             <a href="#" @click.prevent="findRelated(7)">Metatags</a> |
             <a href="#" @click.prevent="previewFinalTags">Preview Final Tags</a>
         </div>

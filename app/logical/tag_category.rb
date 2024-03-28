@@ -46,6 +46,8 @@ class TagCategory
     "unq" => 20,
     "form" => 21,
     "frm" => 21,
+    "view" => 22,
+    "vew" => 22,
   }.freeze
 
   CANONICAL_MAPPING = {
@@ -70,6 +72,7 @@ class TagCategory
     "Position" => 17,
     "Request" => 12,
     "Unique" => 20,
+    "View" => 22,
   }.freeze
 
   REVERSE_MAPPING = {
@@ -94,6 +97,7 @@ class TagCategory
     19 => "explicit",
     20 => "unique",
     21 => "form",
+    22 => "view",
   }.freeze
 
   SHORT_NAME_MAPPING = {
@@ -118,6 +122,7 @@ class TagCategory
     "exp" => "explicit",
     "unq" => "unique",
     "frm" => "form",
+    "vew" => "view",
   }.freeze
 
   HEADER_MAPPING = {
@@ -142,6 +147,7 @@ class TagCategory
     "explicit" => "Explicit",
     "unique" => "Unique",
     "form" => "Forms",
+    "view" => "View",
   }.freeze
 
   ADMIN_ONLY_MAPPING = {
@@ -166,6 +172,7 @@ class TagCategory
     "explicit" => false,
     "unique" => false,
     "form" => false,
+    "view" => false,
   }.freeze
 
   HUMANIZED_MAPPING = {
@@ -189,13 +196,13 @@ class TagCategory
     },
   }.freeze
 
-  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location request genre body hair clothes position action explicit unique form].freeze
+  CATEGORIES = %w[general demographics name copyright artist invalid lore meta category organization location request genre body hair clothes position view action explicit unique form].freeze
   CATEGORY_IDS = CANONICAL_MAPPING.values
 
   SHORT_NAME_LIST = SHORT_NAME_MAPPING.keys
   HUMANIZED_LIST = %w[name copyright artist].freeze
-  SPLIT_HEADER_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position action explicit unique lore location general request meta invalid].freeze
-  CATEGORIZED_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position action explicit unique lore location general request meta invalid].freeze
+  SPLIT_HEADER_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position view action explicit unique lore location general request meta invalid].freeze
+  CATEGORIZED_LIST = %w[name form copyright artist organization category genre demographics clothes body hair position view action explicit unique lore location general request meta invalid].freeze
 
   SHORT_NAME_REGEX = SHORT_NAME_LIST.join("|").freeze
 end

@@ -1615,6 +1615,7 @@ CREATE TABLE public.posts (
     tag_count_explicit integer DEFAULT 0 NOT NULL,
     tag_count_unique integer DEFAULT 0 NOT NULL,
     tag_count_form integer DEFAULT 0 NOT NULL,
+    tag_count_view integer DEFAULT 0 NOT NULL,
     tag_count_invalid integer DEFAULT 0 NOT NULL,
     description text DEFAULT ''::text NOT NULL,
     comment_count integer DEFAULT 0 NOT NULL,
